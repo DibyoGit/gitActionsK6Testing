@@ -1,11 +1,11 @@
 name: Scheduled Workflow
 
 on:
-  schedule:
-    - cron: "0/5 * * * *"
-  #push:
-   # branches:
-   #   - develop
+   #schedule:
+   # - cron: "0/5 * * * *"
+   push:
+     branches:
+       - master
 
 jobs:
    k6_load_test:
