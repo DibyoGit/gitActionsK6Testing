@@ -1,11 +1,10 @@
 name: Scheduled Workflow
 
 on:
-   #schedule:
-   # - cron: "0/5 * * * *"
-   push:
+
+ push:
      branches:
-       - master
+       - develop
 
 jobs:
    k6_load_test:
@@ -21,7 +20,7 @@ jobs:
      - name: Send a Slack Notification
        uses: 8398a7/action-slack@v3
        with:
-         channel: '#personal-channel'
+         channel: '#gintaa-devops'
          status: ${{ job.status }}
          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
        env:
