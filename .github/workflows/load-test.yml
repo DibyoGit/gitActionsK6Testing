@@ -28,7 +28,7 @@ jobs:
              username: 'action-slack',
              icon_emoji: ':octocat:',
              attachments: [{
-             text: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'Service failed to run.Dont Worry. Gintaa i salready analysing the failure root cause' : 'warning'
+             text: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'Service failed to run.Dont Worry. Gintaa is already analysing the failure root cause. Some details are as follow:-> Workflow called ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR} failed in ${process.env.AS_TOOK} ' : 'warning'
             }]
            }
        env:
