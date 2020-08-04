@@ -29,9 +29,10 @@ jobs:
              icon_emoji: ':octocat:',
              attachments: [{
              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-             text: '${{ job.status }}' === 'success' ? 'SUCCESS' : '${{ job.status }}' === 'failure' ? 'Service failed to run but dont worry. Gintaa is already analysing the failure root cause' : 'warning'
+             text: '${{ job.status }}' === 'success' ? 'SUCCESS' : '${{ job.status }}' === 'failure' ? 'Service failed to run but dont worry Gintaa is already analysing the failure root cause' : 'warning'
             }]
            }
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # optional
          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+       if: always()
