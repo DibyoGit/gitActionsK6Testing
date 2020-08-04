@@ -28,8 +28,7 @@ jobs:
              username: 'action-slack',
              icon_emoji: ':octocat:',
              attachments: [{
-             color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',  
-             text: `Testing failure`
+             text: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning'
             }]
            }
        env:
