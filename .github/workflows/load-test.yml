@@ -28,7 +28,7 @@ jobs:
              username: 'action-slack',
              icon_emoji: ':octocat:',
              attachments: [{
-             text: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'Service failed to run.Dont Worry. Gintaa i salready analysing the failure root cause' ? 'danger' : 'warning'
+             text: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'Service failed to run.Dont Worry. Gintaa i salready analysing the failure root cause' : 'warning'
             }]
            }
        env:
