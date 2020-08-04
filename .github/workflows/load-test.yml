@@ -28,6 +28,7 @@ jobs:
             username: 'action-slack',
             icon_emoji: ':octocat:',
             attachments: [{
+               color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',  
                text: '${{ job.status }}' === 'success' ? 'Gintaa service status is SUCCESS' : '${{ job.status }}' === 'failure' ? 'Unfortunately Service failed to run' : 'Don't worry.Gintaa already analyzing failure root cause for you',
            }]
           }
