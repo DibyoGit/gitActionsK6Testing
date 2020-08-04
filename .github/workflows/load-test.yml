@@ -29,8 +29,7 @@ jobs:
              icon_emoji: ':octocat:',
              attachments: [{
              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-             text: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'Service failed to run.Dont Worry. Gintaa is already analysing the failure root cause.' : 'warning' ,
-             text: `As a best practice, we always provide some generic service information like:-> Some details are as follows:-> Workflow called ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR}` 
+             text: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'Service failed to run.Dont Worry. Gintaa is already analysing the failure root cause.As a best practice, we always provide some generic service information like:-> Some details are as follows:-> Workflow called ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR}' : 'warning' ,
             }]
            }
        env:
