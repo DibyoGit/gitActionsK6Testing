@@ -24,13 +24,13 @@ jobs:
          status: custom
          fields: workflow,job,commit,repo,ref,author,took
          custom_payload: |
-          {
-            username: 'action-slack',
-            icon_emoji: ':octocat:',
-            attachments: [{
-               color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',  
-               text: `NA `
-          }
+           {
+             username: 'action-slack',
+             icon_emoji: ':octocat:',
+             attachments: [{
+             text: '${{ job.status }}' === 'success' ? 'SUCCESS' : '${{ job.status }}' === 'failure' ? 'danger' : 'Analysing root cause',  
+            }}
+           }
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # optional
          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
