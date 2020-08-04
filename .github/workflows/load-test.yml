@@ -28,7 +28,7 @@ jobs:
             username: 'action-slack',
             icon_emoji: ':octocat:',
             attachments: [{
-               text: '${{ job.status }}' === 'success' ? 'Gintaa service status are as follows. Workflow--> ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR} succeeded' : '${{ job.status }}' === 'failure' ? 'Unfortunately Service failed to run. : 'Don't worry.Gintaa already analyzing failure root cause for you',
+               text: '${{ job.status }}' === 'success' ? 'Gintaa service status are as follows. Workflow--> ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR} succeeded' : '${{ job.status }}' === 'failure' ? 'Unfortunately Service failed to run' : 'Don't worry.Gintaa already analyzing failure root cause for you',
            }]
           }
        env:
