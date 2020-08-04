@@ -20,7 +20,7 @@ jobs:
      - name: Send a Slack Notification
        uses: 8398a7/action-slack@v3
        with:
-         channel: '#gintaa-devops'
+         channel: '#personal-channel'
          status: ${{ job.status }}
          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
        env:
