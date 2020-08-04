@@ -1,4 +1,4 @@
-wname: Scheduled Workflow
+name: Scheduled Workflow
 
 on:
 
