@@ -28,9 +28,9 @@ jobs:
              username: 'action-slack',
              icon_emoji: ':octocat:',
              attachments: [{
-             color: '${{ job.status }}' === 'success' ? 'SUCCESS' : '${{ job.status }}' === 'failure' ? 'danger' : 'Analysing root cause',  
+             color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',  
              text: `Testing failure`
-            }}
+            }]
            }
        env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # optional
