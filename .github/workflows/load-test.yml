@@ -1,4 +1,4 @@
-name: Scheduled Workflow
+wname: Scheduled Workflow
 
 on:
 
@@ -29,7 +29,7 @@ jobs:
             icon_emoji: ':octocat:',
             attachments: [{
             color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-            text: `Microservie named ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR} succeeded `,
+            text: `Service Status are as follows. Workflow--> ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR} succeeded `,
            }]
           }
        env:
