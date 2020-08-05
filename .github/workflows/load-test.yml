@@ -29,8 +29,8 @@ jobs:
              icon_emoji: ':octocat:',
              attachments: [{
              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning' ,
-             title: `${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR}`,  
-             text: '${{ job.status }}' === 'success' ? 'SUCCESS' : '${{ job.status }}' === 'failure' ? 'Service failed to run but dont worry Gintaa is already analysing the failure root cause' : 'warning'
+             title: `Workflow Details: ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR}`,  
+             text: '${{ job.status }}' === 'success' ? 'SUCCESS' : '${{ job.status }}' === 'failure' ? 'Service failed to run but dont worry Gintaa is already analysing the failure root cause based on above workflow details' : 'warning'
             }]
            }
        env:
