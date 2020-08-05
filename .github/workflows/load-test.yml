@@ -30,7 +30,7 @@ jobs:
              attachments: [{
              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning' ,
              title: `Workflow Details: ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR}`,  
-             text: '${{ job.status }}' === 'success' ? 'Gintaa Service ran successfully. We will be publishing successful deployment to GCR' : '${{ job.status }}' === 'failure' ? 'Service failed to run but dont worry Gintaa is already analysing the failure root cause based on above workflow details' : 'warning'
+             text: '${{ job.status }}' === 'success' ? ':shipit: Gintaa Service ran successfully' : '${{ job.status }}' === 'failure' ? ':warning: Service failed to run. Gintaa is already analysing the failure root cause based on above workflow details' : ':warning:'
             }]
            }
        env:
