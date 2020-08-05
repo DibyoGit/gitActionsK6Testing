@@ -16,7 +16,7 @@ jobs:
      - name: Run local k6 test
        uses: k6io/action@v0.1
        with:
-         filename: test.js     
+         filename: Load-testing-api/test.js     
      - name: Send a Slack Notification
        uses: 8398a7/action-slack@v3
        with:
@@ -30,7 +30,7 @@ jobs:
              attachments: [{
              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning' ,
              title: `Workflow Details: ${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@master by ${process.env.AS_AUTHOR}`,  
-             text: '${{ job.status }}' === 'success' ? 'SUCCESS' : '${{ job.status }}' === 'failure' ? 'Service failed to run but dont worry Gintaa is already analysing the failure root cause based on above workflow details' : 'warning'
+             text: '${{ job.status }}' === 'success' ? 'Gintaa Service ran successfully. We will be publishing successful deployment to GCR' : '${{ job.status }}' === 'failure' ? 'Service failed to run but dont worry Gintaa is already analysing the failure root cause based on above workflow details' : 'warning'
             }]
            }
        env:
